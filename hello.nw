@@ -1,0 +1,58 @@
+This program teaches us how to print to the screen using:
+<<print>>=
+fmt.Println(message)
+@
+
+To print "Hello World", pass a literal string to the function:
+<<message>>=
+"Hello World"
+@
+
+Although it is simple enough to do a print from the 'main' function,
+for demonstration purposes we will do so from another package.
+
+To create a package, create a new directory with a new file.
+At the top of that file, specify the package name:
+
+<<mypackage>>=
+package mypackage
+@
+
+Then we need to import the 'fmt' package which has the 'Println' function:
+
+<<mypackage_imports>>=
+import "fmt"
+@
+
+Now we can create a function that prints a message:
+<<mypackage_print>>=
+func Print(message string) {
+    <<print>>
+}
+@
+
+Finally, we can call this function from the main function:
+<<main_call>>=
+mypackage.Print(<<message>>)
+@
+
+The full files for our program are:
+
+<<mypackage/mypackage.go>>=
+<<mypackage>>
+<<mypackage_imports>>
+<<mypackage_print>>
+@
+
+<<main.go>>=
+package main
+import "github.com/getvictor/noweb_example/mypackage"
+func main() {
+    <<main_call>>
+}
+@
+
+<<go.mod>>=
+module github.com/getvictor/noweb_example
+go 1.24
+@
