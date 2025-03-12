@@ -1,6 +1,6 @@
 # Literate programming example using noweb
 
-Full article: TODO
+Full article: [6 lessons from literate programming](https://victoronsoftware.com/posts/literate-programming-lessons/)
 
 Install noweb with brew (macOS):
 
